@@ -1,35 +1,17 @@
 version: '3.8'
 
 services:
-  postgres:
-    image: docker.io/postgres:15
-    environment:
-      POSTGRES_USER: keycloak
-      POSTGRES_PASSWORD: passw0rd
-    ports:
-      - 5432:5432
-    volumes:
-      - kc-data:/var/lib/postgresql/data
-
   keycloak:
     image: quay.io/keycloak/keycloak:22.0
     command: start-dev
     environment:
-      # HTTP_PROXY: http://proxy:3128
-      # HTTPS_PROXY: http://proxy:3128
-      KC_DB: postgres
-      KC_DB_URL_HOST: postgres
-      KC_DB_URL_PORT: '5432'
-      KC_DB_URL_DATABASE: keycloak
-      KC_DB_USERNAME: keycloak
-      KC_DB_PASSWORD: passw0rd
       KC_HOSTNAME: localhost
-      KC_FEATURES: preview
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
     ports:
       - "8080:8080"
     volumes:
+      - kc_data:/opt/keycloak/data
       - ./providers:/opt/keycloak/providers
       - ./themes:/opt/keycloak/themes
 
@@ -55,4 +37,4 @@ services:
 
 volumes:
   kc-data:
-    name: keycloak-workshop-pg-data
+    name: keycloak-workshop-data

@@ -14,7 +14,6 @@ Folgende Docker Images werden im Workshop verwendet und können bereits vor dem 
 
 ```
 docker pull quay.io/keycloak/keycloak:22.0
-docker pull postgres:15
 docker pull mailhog/mailhog:latest
 docker pull dasniko/bookshop:latest
 ```

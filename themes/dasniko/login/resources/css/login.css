@@ -1,10 +1,17 @@
-.bg-dasniko {
+.bg-dasniko::before {
+  content: "";
   background-image: url(../img/youtube_cover_background.jpg);
   background-size: cover;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .container {
-  max-width: 480px;
+  max-width: 600px;
 }
 
 .page-header {
@@ -41,4 +48,19 @@ a#kc-current-locale-link::after {
 
 .pointer {
   cursor: pointer;
+}
+
+.kc-login-tooltip {
+  display: inline;
+  position: relative;
+}
+.kc-tooltip-text {
+  display: none;
+}
+.kc-login-tooltip:hover .kc-tooltip-text {
+  display: block;
+  position: absolute;
+  white-space: nowrap;
+  top: 20px;
+  left: 0px;
 }
