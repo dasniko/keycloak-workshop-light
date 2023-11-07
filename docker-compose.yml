@@ -36,5 +36,5 @@ services:
       - ./bookshop-keycloak.json:/usr/share/nginx/html/keycloak.json
 
 volumes:
-  kc-data:
+  kc_data:
     name: keycloak-workshop-data
