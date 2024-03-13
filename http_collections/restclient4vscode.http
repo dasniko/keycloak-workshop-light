@@ -1,21 +1,14 @@
 // HTTP Collection for REST Client for Visual Studio Code
 // https://marketplace.visualstudio.com/items?itemName=humao.rest-client
-
-@baseUrl=http://localhost:8080/realms/bookshop
 @client_secret=08d171bf-ba03-44db-8279-f678d68021d7
 
 ###
 
-# @name OIDCConfig
-GET {{baseUrl}}/.well-known/openid-configuration
-
-###
-
 # @name UserToken
-POST {{OIDCConfig.response.body.$.token_endpoint}}
+POST http://localhost:8080/realms/bookshop/protocol/openid-connect/token
 Content-Type: application/x-www-form-urlencoded
 
-username=dasniko
+username=john.doe
 &password=test
 &grant_type=password
 &client_id=shop
@@ -25,10 +18,10 @@ username=dasniko
 ###
 
 # @name UserToken_AdminCLI
-POST {{OIDCConfig.response.body.$.token_endpoint}}
+POST http://localhost:8080/realms/bookshop/protocol/openid-connect/token
 Content-Type: application/x-www-form-urlencoded
 
-username=dasniko
+username=john.doe
 &password=test
 &grant_type=password
 &client_id=admin-cli
@@ -37,7 +30,7 @@ username=dasniko
 ###
 
 # @name ClientToken
-POST {{OIDCConfig.response.body.$.token_endpoint}}
+POST http://localhost:8080/realms/bookshop/protocol/openid-connect/token
 Content-Type: application/x-www-form-urlencoded
 
 client_id=shop
@@ -47,7 +40,7 @@ client_id=shop
 ###
 
 # @name RefreshToken
-POST {{OIDCConfig.response.body.$.token_endpoint}}
+POST http://localhost:8080/realms/bookshop/protocol/openid-connect/token
 Content-Type: application/x-www-form-urlencoded
 
 client_id=shop
@@ -58,25 +51,9 @@ client_id=shop
 ###
 
 # @name UserInfo
-POST {{OIDCConfig.response.body.$.userinfo_endpoint}}
+POST http://localhost:8080/realms/bookshop/protocol/openid-connect/userinfo
 Content-Type: application/x-www-form-urlencoded
 
 access_token={{UserToken.response.body.$.access_token}}
-
-###
-
-# @name ExternalToken
-# @prompt idpAlias The alias configured in your Keycloak IdP settings
-# @prompt access_token The Keycloak access_token to use to retrieve the original IdP tokens
-GET {{baseUrl}}/broker/{{idpAlias}}/token
-Authorization: Bearer {{access_token}}
-
-###
-
-# @name ExternalUserInfo
-POST https://graph.microsoft.com/oidc/userinfo
-Content-Type: application/x-www-form-urlencoded
-
-access_token={{ExternalToken.response.body.$.access_token}}
 
 ###

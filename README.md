@@ -10,12 +10,12 @@
 
 ## Docker Images
 
-Folgende Docker Images werden im Workshop verwendet und können bereits vor dem Workshop mit den folgenden Befehlen runtergeladen werden:
+Folgende Docker Images werden im Workshop verwendet und können (sollten!) bereits vor dem Workshop mit den folgenden Befehlen runtergeladen werden:
 
 ```
-docker pull quay.io/keycloak/keycloak:22.0
-docker pull mailhog/mailhog:latest
-docker pull dasniko/bookshop:latest
+docker pull quay.io/keycloak/keycloak:24.0
+docker pull axllent/mailpit:latest
+docker pull dasniko/bookshop:0.0.4
 ```
 
 ## Download Workshop-Material
@@ -42,9 +42,6 @@ https://speakerdeck.com/dasniko/oauth2-oidc-and-jwt-important-basics
 
 Bookshop (Verteilte Anwendung, Basis Quarkus & React.JS):
 https://github.com/dasniko/keycloak-bookshop-demo
-
-BookBox (JavaScript/React.JS):
-https://github.com/dasniko/keycloak-reactjs-demo
 
 ### Themeing
 
