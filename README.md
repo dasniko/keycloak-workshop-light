@@ -6,16 +6,15 @@
 * [Docker](https://www.docker.com/) und [Docker Compose](https://docs.docker.com/compose/) V2 installiert und lauffähig (ggf. lokale Admin-Rechte auf dem Rechner erteilen)
 * Internetzugriff (ggf. Proxy-/Firewall-/VPN-Konfigurationen etc. überprüfen)
 * Browser
-* HTTP-Client (z.B. [REST CLient for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) _(präferiert)_, [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/), o.ä.)
 
 ## Docker Images
 
-Folgende Docker Images werden im Workshop verwendet und können (sollten!) bereits vor dem Workshop mit den folgenden Befehlen runtergeladen werden:
+Folgende Docker Images werden im Workshop verwendet und können (sollten!) bereits _vor_ dem Workshop mit den folgenden Befehlen runtergeladen werden:
 
 ```
 docker pull quay.io/keycloak/keycloak:24.0
 docker pull axllent/mailpit:latest
-docker pull dasniko/bookshop:0.0.4
+docker pull dasniko/bookshop:0.0.5
 ```
 
 ## Download Workshop-Material
@@ -42,10 +41,6 @@ https://speakerdeck.com/dasniko/oauth2-oidc-and-jwt-important-basics
 
 Bookshop (Verteilte Anwendung, Basis Quarkus & React.JS):
 https://github.com/dasniko/keycloak-bookshop-demo
-
-### Themeing
-
-https://www.keycloak.org/docs/latest/server_development/index.html#_themes
 
 ## Kontakt
 

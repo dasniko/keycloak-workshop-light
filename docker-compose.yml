@@ -21,7 +21,9 @@ services:
       - "8025:8025"
 
   bookshop:
-    image: dasniko/bookshop:0.0.4
+    profiles:
+      - bookshop
+    image: dasniko/bookshop:0.0.5
     command: [ "wait-for-it.sh", "keycloak:8080", "--", "/deployments/entrypoint.sh" ]
     environment:
       WAITFORIT_TIMEOUT: '120'
