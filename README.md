@@ -39,6 +39,10 @@ https://github.com/dasniko/testcontainers-keycloak
 OAuth2, OIDC & JWT Basics Präsentation:
 https://speakerdeck.com/dasniko/oauth2-oidc-and-jwt-important-basics
 
+Sequenz-Diagramm [Authorization Code Grant OIDC](Seq_Authorization_Code_Grant_OIDC.pdf)
+
+Sequenz-Diagramm [PKCE for OAuth2](Seq_PKCE_for_OAuth2.pdf)
+
 Bookshop (Verteilte Anwendung, Basis Quarkus & React.JS):
 https://github.com/dasniko/keycloak-bookshop-demo
 
