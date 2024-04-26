@@ -14,7 +14,7 @@ Folgende Docker Images werden im Workshop verwendet und können (sollten!) berei
 ```
 docker pull quay.io/keycloak/keycloak:24.0
 docker pull axllent/mailpit:latest
-docker pull dasniko/bookshop:0.0.5
+docker pull dasniko/bookshop:0.0.6
 ```
 
 ## Download Workshop-Material
