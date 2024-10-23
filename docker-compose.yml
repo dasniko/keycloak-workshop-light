@@ -1,13 +1,12 @@
-version: '3.8'
-
 services:
   keycloak:
-    image: quay.io/keycloak/keycloak:24.0
+    image: quay.io/keycloak/keycloak:26.0
     command: start-dev
     environment:
-      KC_HOSTNAME: localhost
-      KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+      KC_HOSTNAME: 'http://localhost:8080'
+      KC_HOSTNAME_BACKCHANNEL_DYNAMIC: 'true'
     ports:
       - "8080:8080"
     volumes:
@@ -23,7 +22,7 @@ services:
   bookshop:
     profiles:
       - bookshop
-    image: dasniko/bookshop:0.0.6
+    image: dasniko/bookshop:0.0.8
     command: [ "wait-for-it.sh", "keycloak:8080", "--", "/deployments/entrypoint.sh" ]
     environment:
       WAITFORIT_TIMEOUT: '120'
@@ -39,4 +38,4 @@ services:
 
 volumes:
   kc_data:
-    name: keycloak-workshop-data
+    name: keycloak-workshop-light-data
