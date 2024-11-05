@@ -21,6 +21,7 @@ Folgende Docker Images werden im Workshop verwendet und können (sollten!) berei
 ```
 docker pull quay.io/keycloak/keycloak:26.0
 docker pull axllent/mailpit:latest
+docker pull osixia/openldap:latest
 docker pull dasniko/bookshop:0.0.8
 ```
 

@@ -36,6 +36,20 @@ services:
     volumes:
       - ./bookshop-keycloak.json:/usr/share/nginx/html/keycloak.json
 
+  ldap:
+    container_name: kcd_ldap
+    image: osixia/openldap:latest
+    environment:
+      LDAP_LOG_LEVEL: '0'
+      LDAP_ORGANISATION: Acme Inc.
+      LDAP_DOMAIN: corp.acme.local
+      # admin User: cn=admin,dc=corp,dc=acme,dc=local
+      LDAP_ADMIN_PASSWORD: admin
+      LDAP_REMOVE_CONFIG_AFTER_SETUP: 'false'
+      LDAP_SEED_INTERNAL_LDIF_PATH: /acme/openldap/ldif/acme.ldif
+    volumes:
+      - ./ldap/acme.ldif:/acme/openldap/ldif/acme.ldif
+
 volumes:
   kc_data:
     name: keycloak-workshop-light-data
