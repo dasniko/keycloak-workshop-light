@@ -7,10 +7,13 @@ services:
       KC_BOOTSTRAP_ADMIN_PASSWORD: admin
       KC_HOSTNAME: 'http://localhost:8080'
       KC_HOSTNAME_BACKCHANNEL_DYNAMIC: 'true'
+      KC_TRUSTSTORE_PATHS: /opt/keycloak/certs/rootCA.crt
+      KC_TLS_HOSTNAME_VERIFIER: ANY
     ports:
       - "8080:8080"
     volumes:
       - kc_data:/opt/keycloak/data
+      - ./certs:/opt/keycloak/certs
       - ./providers:/opt/keycloak/providers
       - ./themes:/opt/keycloak/themes
 
@@ -40,6 +43,8 @@ services:
     container_name: kcd_ldap
     image: osixia/openldap:latest
     environment:
+      # bind user: cn=keycloak,dc=corp,dc=acme,dc=local
+      # bind password: keycloak
       LDAP_LOG_LEVEL: '0'
       LDAP_ORGANISATION: Acme Inc.
       LDAP_DOMAIN: corp.acme.local
@@ -47,8 +52,14 @@ services:
       LDAP_ADMIN_PASSWORD: admin
       LDAP_REMOVE_CONFIG_AFTER_SETUP: 'false'
       LDAP_SEED_INTERNAL_LDIF_PATH: /acme/openldap/ldif/acme.ldif
+      LDAP_TLS: "true"
+      LDAP_TLS_CRT_FILENAME: "ldap.crt"
+      LDAP_TLS_KEY_FILENAME: "ldap.key"
+      LDAP_TLS_CA_CRT_FILENAME: "rootCA.crt"
+      LDAP_TLS_VERIFY_CLIENT: never
     volumes:
       - ./ldap/acme.ldif:/acme/openldap/ldif/acme.ldif
+      - ./certs:/container/service/slapd/assets/certs
 
 volumes:
   kc_data:
