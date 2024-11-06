@@ -1,7 +1,7 @@
 services:
   keycloak:
     image: quay.io/keycloak/keycloak:26.0
-    command: start-dev
+    command: start-dev --import-realm
     environment:
       KC_BOOTSTRAP_ADMIN_USERNAME: admin
       KC_BOOTSTRAP_ADMIN_PASSWORD: admin
@@ -16,6 +16,7 @@ services:
       - ./certs:/opt/keycloak/certs
       - ./providers:/opt/keycloak/providers
       - ./themes:/opt/keycloak/themes
+      - ./bookshop-realm.json:/opt/keycloak/data/import/bookshop-realm.json
 
   mail:
     image: axllent/mailpit:latest
@@ -23,15 +24,13 @@ services:
       - "8025:8025"
 
   bookshop:
-    profiles:
-      - bookshop
     image: dasniko/bookshop:0.0.8
     command: [ "wait-for-it.sh", "keycloak:8080", "--", "/deployments/entrypoint.sh" ]
     environment:
       WAITFORIT_TIMEOUT: '120'
       AUTH_SERVER_URL: http://keycloak:8080/realms/bookshop
       SHOP_CLIENT_ID: shop
-      SHOP_CLIENT_SECRET: unknown
+      SHOP_CLIENT_SECRET: 08d171bf-ba03-44db-8279-f678d68021d7
     ports:
       - "3000:3000"
       - "8081:8081"
