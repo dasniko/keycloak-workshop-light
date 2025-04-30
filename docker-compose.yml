@@ -1,6 +1,6 @@
 services:
   keycloak:
-    image: quay.io/keycloak/keycloak:26.0
+    image: quay.io/keycloak/keycloak:26.2
     command: start-dev
     environment:
       KC_BOOTSTRAP_ADMIN_USERNAME: admin
@@ -8,7 +8,6 @@ services:
       KC_HOSTNAME: 'http://localhost:8080'
       KC_HOSTNAME_BACKCHANNEL_DYNAMIC: 'true'
       KC_TRUSTSTORE_PATHS: /opt/keycloak/certs/rootCA.crt
-      KC_TLS_HOSTNAME_VERIFIER: ANY
     ports:
       - "8080:8080"
     volumes:
@@ -25,7 +24,7 @@ services:
   bookshop:
     profiles:
       - bookshop
-    image: dasniko/bookshop:0.0.8
+    image: dasniko/bookshop:0.0.9
     command: [ "wait-for-it.sh", "keycloak:8080", "--", "/deployments/entrypoint.sh" ]
     environment:
       WAITFORIT_TIMEOUT: '120'
@@ -41,25 +40,8 @@ services:
 
   ldap:
     container_name: kcd_ldap
-    image: osixia/openldap:latest
-    environment:
-      # bind user: cn=keycloak,dc=corp,dc=acme,dc=local
-      # bind password: keycloak
-      LDAP_LOG_LEVEL: '0'
-      LDAP_ORGANISATION: Acme Inc.
-      LDAP_DOMAIN: corp.acme.local
-      # admin User: cn=admin,dc=corp,dc=acme,dc=local
-      LDAP_ADMIN_PASSWORD: admin
-      LDAP_REMOVE_CONFIG_AFTER_SETUP: 'false'
-      LDAP_SEED_INTERNAL_LDIF_PATH: /acme/openldap/ldif/acme.ldif
-      LDAP_TLS: "true"
-      LDAP_TLS_CRT_FILENAME: "ldap.crt"
-      LDAP_TLS_KEY_FILENAME: "ldap.key"
-      LDAP_TLS_CA_CRT_FILENAME: "rootCA.crt"
-      LDAP_TLS_VERIFY_CLIENT: never
-    volumes:
-      - ./ldap/acme.ldif:/acme/openldap/ldif/acme.ldif
-      - ./certs:/container/service/slapd/assets/certs
+    image: docker.io/dasniko/openldap_flintstones:latest
+    # bind user: cn=keycloak,dc=stoneage,dc=local
 
 volumes:
   kc_data:
