@@ -13,7 +13,6 @@ services:
     volumes:
       - kc_data:/opt/keycloak/data
       - ./certs:/opt/keycloak/certs
-      - ./providers:/opt/keycloak/providers
       - ./themes:/opt/keycloak/themes
 
   mail:
