@@ -1,6 +1,6 @@
 services:
   keycloak:
-    image: quay.io/keycloak/keycloak:26.2
+    image: quay.io/keycloak/keycloak:26.3
     command: start-dev
     environment:
       KC_BOOTSTRAP_ADMIN_USERNAME: admin
@@ -23,7 +23,7 @@ services:
   bookshop:
     profiles:
       - bookshop
-    image: dasniko/bookshop:0.0.9
+    image: ghcr.io/dasniko/keycloak-bookshop-demo:0.0.9-snapshot
     command: [ "wait-for-it.sh", "keycloak:8080", "--", "/deployments/entrypoint.sh" ]
     environment:
       WAITFORIT_TIMEOUT: '120'

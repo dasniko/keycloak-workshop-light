@@ -19,10 +19,10 @@ _Dieses Repository clonen oder über den u.a. Download-Link runterladen und entp
 Folgende Docker Images werden im Workshop verwendet und können (sollten!) bereits _vor_ dem Workshop mit den folgenden Befehlen runtergeladen werden:
 
 ```
-docker pull quay.io/keycloak/keycloak:26.2
+docker pull quay.io/keycloak/keycloak:26.3
 docker pull axllent/mailpit:latest
 docker pull dasniko/openldap_flintstones:latest
-docker pull dasniko/bookshop:0.0.9
+docker pull ghcr.io/dasniko/keycloak-bookshop-demo:0.0.9-snapshot
 ```
 
 ## Folien & Beispiele
