@@ -16,7 +16,7 @@ _Dieses Repository clonen oder über den u.a. Download-Link runterladen und entp
 
 ## Docker Images
 
-Folgende Docker Images werden im Workshop verwendet und können (sollten!) bereits _vor_ dem Workshop mit den folgenden Befehlen runtergeladen werden:
+Folgende Docker Images werden im Workshop verwendet und können (sollten!) bereits _vor_ dem Workshop (_aber nicht früher als 1 Woche davor!_) mit den folgenden Befehlen runtergeladen/gepullt werden:
 
 ```
 docker pull quay.io/keycloak/keycloak:26.4
