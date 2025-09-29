@@ -19,9 +19,9 @@ _Dieses Repository clonen oder über den u.a. Download-Link runterladen und entp
 Folgende Docker Images werden im Workshop verwendet und können (sollten!) bereits _vor_ dem Workshop mit den folgenden Befehlen runtergeladen werden:
 
 ```
-docker pull quay.io/keycloak/keycloak:26.3
+docker pull quay.io/keycloak/keycloak:26.4
 docker pull axllent/mailpit:latest
-docker pull dasniko/openldap_flintstones:latest
+docker pull ghcr.io/dasniko/flintstones_ldap:latest
 docker pull ghcr.io/dasniko/keycloak-bookshop-demo:0.0.9-snapshot
 ```
 
@@ -47,8 +47,8 @@ https://github.com/dasniko/keycloak-bookshop-demo
 
 * Guides: https://www.keycloak.org/guides
 * Docs: https://www.keycloak.org/documentation
-* Admin CLI: https://www.keycloak.org/docs/latest/server_admin/index.html#admin-cli
 * Benchmark: https://www.keycloak.org/keycloak-benchmark/
+* Terraform Provider: https://registry.terraform.io/providers/keycloak/keycloak/latest/docs
 
 ### Allgemeine Beispiele, Erweiterungen & Links
 

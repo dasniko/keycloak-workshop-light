@@ -1,6 +1,6 @@
 services:
   keycloak:
-    image: quay.io/keycloak/keycloak:26.3
+    image: quay.io/keycloak/keycloak:26.4
     command: start-dev
     environment:
       KC_BOOTSTRAP_ADMIN_USERNAME: admin
@@ -21,8 +21,6 @@ services:
       - "8025:8025"
 
   bookshop:
-    profiles:
-      - bookshop
     image: ghcr.io/dasniko/keycloak-bookshop-demo:0.0.9-snapshot
     command: [ "wait-for-it.sh", "keycloak:8080", "--", "/deployments/entrypoint.sh" ]
     environment:
@@ -39,8 +37,8 @@ services:
 
   ldap:
     container_name: kcd_ldap
-    image: docker.io/dasniko/openldap_flintstones:latest
-    # bind user: cn=keycloak,dc=stoneage,dc=local
+    image: ghcr.io/dasniko/flintstones_ldap:latest
+    # bind user: cn=keycloak,dc=bedrock,dc=local
 
 volumes:
   kc_data:
