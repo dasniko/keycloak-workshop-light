@@ -60,5 +60,5 @@ https://github.com/dasniko
 https://github.com/dasniko/keycloak-extensions-demo
 * Testcontainer-Keycloak Projekt:
 https://github.com/dasniko/testcontainers-keycloak
-* Moderator @ Keycloak Discourse Forum:
-https://keycloak.discourse.group/
+* Moderator @ Keycloak Forum:
+https://forum.keycloak.org
