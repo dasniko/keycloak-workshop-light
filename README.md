@@ -1,4 +1,6 @@
-# Keycloak Workshop für Einsteiger by @dasniko
+# Keycloak Quickstart Workshop by @dasniko
+
+![](https://img.shields.io/badge/Keycloak-26.4-blue)
 
 ## Voraussetzungen
 
@@ -60,5 +62,43 @@ https://github.com/dasniko
 https://github.com/dasniko/keycloak-extensions-demo
 * Testcontainer-Keycloak Projekt:
 https://github.com/dasniko/testcontainers-keycloak
-* Moderator @ Keycloak Discourse Forum:
-https://keycloak.discourse.group/
+* Moderator @ Keycloak Community Forum:
+https://forum.keycloak.org/
+
+### Standards, Spezifikationen & BCP Guides
+
+#### OAuth 2.0
+
+* OAuth 2.0 Overview: https://oauth.net/2/
+* OAuth Core, RFC 6749: https://datatracker.ietf.org/doc/html/rfc6749
+* OAuth 2.0 Threat Model and Security Considerations, RFC 6819: https://datatracker.ietf.org/doc/html/rfc6819
+* OAuth 2.0 Token Revocation, RFC 7009: https://datatracker.ietf.org/doc/html/rfc7009
+* Proof Key for Code Exchange, RFC 7636: https://datatracker.ietf.org/doc/html/rfc7636
+* OAuth 2.0 for Native Apps, RFC 8252: https://datatracker.ietf.org/doc/html/rfc8252
+* OAuth 2.0 Device Authorization Grant, RFC 8628: https://datatracker.ietf.org/doc/html/rfc8628
+* OAuth 2.0 for Browser-Based Apps: https://datatracker.ietf.org/doc/html/draft-ietf-oauth-browser-based-apps
+* Best Current Practice for OAuth 2.0 Security, RFC 9700: https://datatracker.ietf.org/doc/html/rfc9700
+
+#### OAuth 2.1
+
+* OAuth 2.1 Overview: https://oauth.net/2.1/
+* OAuth 2.1 Draft: https://datatracker.ietf.org/doc/draft-ietf-oauth-v2-1
+* GNAP Overview: https://oauth.net/gnap/
+
+#### Tokens
+
+* OAuth 2.0 Bearer Token Usage, RFC 6750: https://datatracker.ietf.org/doc/html/rfc6750
+* OAuth 2.0 Token Binding, Draft: https://datatracker.ietf.org/doc/html/draft-ietf-oauth-token-binding-08
+* OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens, RFC 8705: https://datatracker.ietf.org/doc/html/rfc8705
+* JSON Web Token, RFC 7519: https://datatracker.ietf.org/doc/html/rfc7519
+* JSON Web Token (JWT) Best Current Practice, RFC 8725: https://datatracker.ietf.org/doc/html/rfc8725
+* JSON Web Token (JWT) Profile for OAuth 2.0 Access Tokens, RFC 9068: https://datatracker.ietf.org/doc/html/rfc9068
+
+#### OIDC
+
+* All OIDC Specifications: https://openid.net/developers/specs/
+* OpenID Connect Core 1.0: https://openid.net/specs/openid-connect-core-1_0.html
+* OpenID Connect RP-Initiated Logout 1.0: https://openid.net/specs/openid-connect-rpinitiated-1_0.html
+* OpenID Connect Session Management 1.0: https://openid.net/specs/openid-connect-session-1_0.html
+* OpenID Connect Front-Channel Logout 1.0: https://openid.net/specs/openid-connect-frontchannel-1_0.html
+* OpenID Connect Back-Channel Logout 1.0: https://openid.net/specs/openid-connect-backchannel-1_0.html
