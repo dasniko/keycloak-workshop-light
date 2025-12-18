@@ -37,7 +37,7 @@ services:
 
   ldap:
     container_name: kcd_ldap
-    image: ghcr.io/dasniko/flintstones_ldap:latest
+    image: ghcr.io/dasniko/flintstones-ldap:latest
     # bind user: cn=keycloak,dc=bedrock,dc=local
 
 volumes:
