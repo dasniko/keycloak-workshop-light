@@ -24,7 +24,7 @@ Folgende Docker Images werden im Workshop verwendet und können (sollten!) berei
 docker pull quay.io/keycloak/keycloak:26.4
 docker pull axllent/mailpit:latest
 docker pull ghcr.io/dasniko/flintstones_ldap:latest
-docker pull ghcr.io/dasniko/keycloak-bookshop-demo:0.0.9-snapshot
+docker pull ghcr.io/dasniko/keycloak-bookshop-demo:0.0.10
 ```
 
 ## Folien & Beispiele
@@ -39,8 +39,8 @@ https://github.com/dasniko/keycloak-bookshop-demo
 ## Links für die Workshop-Systeme
 
 * Keycloak - http://localhost:8080
-* Bookshop - http://localhost:8081
-  * Checkout - http://localhost:3000
+* Bookshop - https://localhost:8081
+  * Checkout - https://localhost:3000
 * Mailserver - http://localhost:8025
 
 ## Weitere Links

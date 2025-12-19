@@ -8,6 +8,7 @@ services:
       KC_HOSTNAME: 'http://localhost:8080'
       KC_HOSTNAME_BACKCHANNEL_DYNAMIC: 'true'
       KC_TRUSTSTORE_PATHS: /opt/keycloak/certs/rootCA.crt
+      KC_TLS_HOSTNAME_VERIFIER: ANY
     ports:
       - "8080:8080"
     volumes:
@@ -21,11 +22,12 @@ services:
       - "8025:8025"
 
   bookshop:
-    image: ghcr.io/dasniko/keycloak-bookshop-demo:0.0.9-snapshot
+    image: ghcr.io/dasniko/keycloak-bookshop-demo:0.0.10
     command: [ "wait-for-it.sh", "keycloak:8080", "--", "/deployments/entrypoint.sh" ]
     environment:
       WAITFORIT_TIMEOUT: '120'
       AUTH_SERVER_URL: http://keycloak:8080/realms/bookshop
+      AUTH_SERVER_PUBLIC_URL: http://localhost:8080/realms/bookshop
       SHOP_CLIENT_ID: shop
       SHOP_CLIENT_SECRET: unknown
     ports:
