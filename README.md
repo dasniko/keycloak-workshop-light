@@ -1,6 +1,6 @@
 # Keycloak Quickstart Workshop by @dasniko
 
-![](https://img.shields.io/badge/Keycloak-26.4-blue)
+![](https://img.shields.io/badge/Keycloak-26.5-blue)
 
 ## Voraussetzungen
 
@@ -21,7 +21,7 @@ _Dieses Repository clonen oder über den u.a. Download-Link runterladen und entp
 Folgende Docker Images werden im Workshop verwendet und können (sollten!) bereits _vor_ dem Workshop (_aber nicht früher als 1 Woche davor!_) mit den folgenden Befehlen runtergeladen/gepullt werden:
 
 ```
-docker pull quay.io/keycloak/keycloak:26.4
+docker pull quay.io/keycloak/keycloak:26.5
 docker pull axllent/mailpit:latest
 docker pull ghcr.io/dasniko/flintstones_ldap:latest
 docker pull ghcr.io/dasniko/keycloak-bookshop-demo:0.0.10
