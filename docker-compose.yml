@@ -22,7 +22,7 @@ services:
       - "8025:8025"
 
   bookshop:
-    image: ghcr.io/dasniko/keycloak-bookshop-demo:0.0.10
+    image: ghcr.io/dasniko/keycloak-bookshop-demo:0.0.11
     command: [ "wait-for-it.sh", "keycloak:8080", "--", "/deployments/entrypoint.sh" ]
     environment:
       WAITFORIT_TIMEOUT: '120'
